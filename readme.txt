@@ -38,4 +38,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 = 1.0 =
 * 최초 플러그인 배포
 
+= 1.1 =
+* 링크만 전송하기 기능 추가
+
 == Upgrade Notice ==
