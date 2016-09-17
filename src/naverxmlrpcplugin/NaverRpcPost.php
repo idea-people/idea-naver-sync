@@ -75,9 +75,13 @@ class NaverRpcPost {
 
 		$param = new RpcParam();
 		$param->setTitle( $post->post_title );
-		$content = $post->post_content . '<div>'.wp_specialchars_decode( $this->plugin->plugin_option->get_option( 'footerContent' ).'</div>', ENT_QUOTES );
+		$content = $post->post_content . '<div>' . wp_specialchars_decode( $this->plugin->plugin_option->get_option( 'footerContent' ) . '</div>', ENT_QUOTES );
 		$content = apply_filters( 'the_content', $content );
 		$content = str_replace( "\\\"", "\"", $content );
+
+		if ( strpos( $post->post_status, 'draft' ) ) {
+			return $param;
+		}
 
 		$dom = new DOMDocument();
 		$dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ) );

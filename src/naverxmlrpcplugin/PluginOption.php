@@ -78,7 +78,10 @@ class PluginOption {
 
 		$this->create_field( 'field6', '자동 이미지명변경 사용여부', 'auto_image_change_use_yn', '_create_checkbox_field', '네이버로 이미지 전송이 안될경우 활성화 해주세요' );
 
+		$this->create_field( 'field8', '링크만 전송하기', 'only_link_send', '_create_checkbox_field', '워드프레스 링크만 전송됩니다.' );
+
 		$this->create_field( 'field7', '하단 고정 콘텐츠 설정', 'footerContent', '_create_wpeditor_field' );
+
 	}
 
 	public function view_section_1() {
