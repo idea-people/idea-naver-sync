@@ -112,10 +112,11 @@ class PluginPostHandler {
 			$naver_pre_check_post = $this->plugin->getRpcClient()->getPost( $naver_sync_id );
 
 			if ( $this->plugin->plugin_option->get_option( 'only_link_send' ) ) {
-				$desc = sprintf( '<a href="%s">%s LINK</a>', get_permalink( $post_ID ), get_the_title( $post_ID ) );
-				$param->setDescription( $desc );
+				$desc           = sprintf( '<a href="%s">%s LINK</a>', get_permalink( $post_ID ), get_the_title( $post_ID ) );
+				$footer_content = '<div>' . wp_specialchars_decode( $this->plugin->plugin_option->get_option( 'footerContent' ) . '</div>', ENT_QUOTES );
+				$param->setDescription( $desc . $footer_content );
 			}
-
+			
 			/**
 			 * @var $param RpcParam
 			 */

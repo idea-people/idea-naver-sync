@@ -66,12 +66,12 @@ class Plugin {
 			$this->file_lang = new PluginFileLang();
 			$this->file_lang->run();
 		}
-		
+
 		return true;
 	}
 
 	/**
-	 * @return RpcClient
+	 * @return bool|RpcClient
 	 */
 	public function getRpcClient() {
 		static $client;
